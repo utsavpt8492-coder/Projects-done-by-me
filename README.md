@@ -1,2 +1,2 @@
 # Projects-done-by-me
-Here , i used to publish my all works done in college , bootcamps and also developed by me, i used to publish all products and projects in particular folder !
+This repositary contains a collection of my work , projects, including college projects, internship projects, Bootcamp projects and independent developments. Each project is organised into its own dedicated folder .
