@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Student Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-shape shape-one"></div>
+  <div class="background-shape shape-two"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <div class="brand"><span class="brand-mark">✦</span> STUDYSPARK</div>
+      <h1>Learn smarter.<br><span>Launch stronger.</span></h1>
+      <p>Generate practice quizzes and tailor your resume for the role you want.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Application tools">
+      <button class="tab active" data-panel="quiz-panel"><span>✎</span> AI Quiz Generator</button>
+      <button class="tab" data-panel="resume-panel"><span>⌁</span> Resume Matcher</button>
+    </nav>
+
+    <section id="quiz-panel" class="tool-panel active-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">PRACTICE MODE</p>
+          <h2>Build your quiz</h2>
+          <p>Choose a topic and difficulty. Your questions are ready in seconds.</p>
+        </div>
+        <div class="heading-icon">✎</div>
+      </div>
+
+      <form id="quiz-setup" class="quiz-setup">
+        <label>
+          Topic
+          <input id="topic" list="topics" placeholder="e.g. Python, Machine Learning, GenAI" required />
+          <datalist id="topics">
+            <option value="Python"></option>
+            <option value="Machine Learning"></option>
+            <option value="GenAI"></option>
+          </datalist>
+        </label>
+        <label>
+          Difficulty
+          <select id="difficulty">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+        <label>
+          Questions
+          <select id="question-count">
+            <option value="3">3 questions</option>
+            <option value="5" selected>5 questions</option>
+          </select>
+        </label>
+        <button class="primary-button" type="submit">Generate quiz <span>→</span></button>
+      </form>
+
+      <div id="quiz-empty" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h3>Your quiz will appear here</h3>
+        <p>Try one of the suggested topics, or enter a topic of your own.</p>
+      </div>
+      <div id="quiz-content" class="hidden"></div>
+    </section>
+
+    <section id="resume-panel" class="tool-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">CAREER MODE</p>
+          <h2>Match your next role</h2>
+          <p>Compare your resume against a job description and see what to improve.</p>
+        </div>
+        <div class="heading-icon coral">⌁</div>
+      </div>
+
+      <form id="matcher-form" class="matcher-form">
+        <label>
+          Your resume
+          <textarea id="resume-text" placeholder="Paste your resume text here..." required></textarea>
+        </label>
+        <label>
+          Job description
+          <textarea id="job-text" placeholder="Paste the job description here..." required></textarea>
+        </label>
+        <button class="primary-button match-button" type="submit">Analyse match <span>→</span></button>
+      </form>
+
+      <div id="match-empty" class="empty-state compact">
+        <div class="empty-icon coral-bg">⌁</div>
+        <h3>Get a focused application plan</h3>
+        <p>We will identify matching skills, missing skills, and practical resume suggestions.</p>
+      </div>
+      <div id="match-results" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer>Built for students · Use the optional LLM integration in <code>script.js</code> for live AI-generated content.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
